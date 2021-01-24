@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.MainSellerActivity">
+    <RelativeLayout
+        android:id="@+id/toolbarR1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/shape_rect01">
+
+<!--        <TextView-->
+<!--            android:id="@+id/nameTv"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Name"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textColor="@color/colorWhite"-->
+<!--            />-->
+        <ImageButton
+            android:id="@+id/logoutBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_logout_white"
+            android:layout_alignParentEnd="true"
+            android:background="@null"/>
+
+        <ImageButton
+            android:id="@+id/addProductBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_add_shopping_cart_primary"
+            android:layout_toStartOf="@+id/logoutBtn"
+            android:background="@null"/>
+
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/profileIv"
+            android:layout_marginEnd="10dp"
+            app:c_border="true"
+            app:c_border_color="@color/colorWhite"
+            android:src="@drawable/ic_person_gray"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:id="@+id/nameTv"
+            android:layout_toEndOf="@id/profileIv"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shop Name"
+            android:id="@+id/shopNameTv"
+            android:layout_toEndOf="@id/profileIv"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:layout_below="@+id/nameTv"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:id="@+id/emailTv"
+            android:layout_toEndOf="@id/profileIv"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:layout_below="@+id/shopNameTv"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/profileIv"
+
+            android:padding="5dp">
+            <TextView
+                android:id="@+id/tabProductsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+               android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rect3"
+                android:text="Products"
+                android:textColor="@color/colorBlack"/>
+            <TextView
+                android:id="@+id/tabOrdersTv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rect4"
+                android:text="Orders"
+                android:textColor="@color/colorWhite"/>
+
+        </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+    android:layout_below="@+id/toolbarR1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/productsR1">
+        <!-- -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchProductEt"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rect02"
+            android:drawableStart="@drawable/ic_search_gray"
+            android:layout_toStartOf="@+id/filterProductBtn"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:hint="Search"
+            />
+        <!-- filter-->
+            <ImageButton
+            android:id="@+id/filterProductBtn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_filter_gray"
+            />
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/filterProductTv"
+            android:layout_below="@+id/searchProductEt"
+            android:textColor="@color/colorBlack"
+            android:text="Showing All"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"/>
+        <!-- RecyclerView-->
+            <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productsRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/filterProductTv"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_product_seller"/>
+
+
+</RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/toolbarR1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ordersR1">
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
